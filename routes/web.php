@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('tenpo/create', 'Admin\TenpoController@add');
+    Route::get('tenpo/create', 'Admin\TenpoController@add')->middleware('auth');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
