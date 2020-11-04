@@ -11,4 +11,9 @@ class TenpoController extends Controller
     {
         return view('admin.tenpo.create');
     }
+    
+    public function create(Request $request)
+    {
+        return redirect('admin/tenpo/create');
+    }
 }
